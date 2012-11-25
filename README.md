@@ -18,6 +18,9 @@ for Lion (OS X 10.7) or Mountain Lion (OS X 10.8).
 
     chsh -s /bin/zsh
 
+3) Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for
+vagrant
+
 Install
 -------
 
@@ -30,22 +33,20 @@ What it sets up
 
 * Ack for finding things in files
 * Bundler gem for managing Ruby libraries
-* Foreman gem for serving Rails apps locally
-* Heroku Toolbelt for interacting with the Heroku API
-* Heroku Config plugin for local `ENV` variables
+* Foreman gem for serving apps locally
 * Homebrew for managing operating system libraries
-* ImageMagick for cropping and resizing images
 * Postgres for storing relational data
-* Postgres gem for talking to Postgres from Ruby
-* Qt for headless JavaScript testing via Capybara Webkit
-* Rails gem for writing web applications
+* PostGIS for storing geo-spatial data
 * Redis for storing key-value data
-* Ruby stable for writing general-purpose code
+* Python, Ruby and Node for writing general-purpose code
+* Virtualenv and VirtualenvWrapper for managing python virtual
+  environments
 * RVM for managing versions of the Ruby programming language
 * SSH public key for authenticating with Github and Heroku
 * Tmux for saving project state and switching between projects
+* Vagrant for managing virtual machines
 
-It should take less than 15 minutes to install (depends on your machine).
+It should take less than 30 minutes to install (depends on your machine).
 
 Credits
 -------

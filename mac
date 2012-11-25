@@ -18,10 +18,16 @@ echo "Installing Homebrew, a good OS X package manager ..."
   successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
   successfully brew update
 
+echo "Install basic dependencies"
+  successfully brew install fuse4x fuse4x-kext libpng jpeg libtiff
+
+echo "Installing Python and Node"
+  successfully brew install python node
+
 echo "Putting Homebrew location earlier in PATH ..."
   successfully echo "
 # recommended by brew doctor
-export PATH='/usr/local/bin:$PATH'" >> ~/.zshenv
+export PATH='/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:$PATH'" >> ~/.zshenv
   successfully source ~/.zshenv
 
 echo "Installing GNU Compiler Collection and dependencies ..."
@@ -31,9 +37,25 @@ echo "Installing GNU Compiler Collection and dependencies ..."
 echo "Installing libksba, recommended for Ruby 1.9.3 ..."
   successfully brew install libksba
 
+echo "Install python packages"
+  successfully pip install --upgrade distribute
+  successfully pip install --upgrade pip
+  successfully pip install virtualenv
+  successfully pip install virtualenvwrapper
+  successfully pip install mercurial
+  successfully pip install flake8
+
+echo "Install npm packages"
+  successfully npm install coffee-script -g
+
 echo "Installing Postgres, a good open source relational database ..."
   successfully brew install postgres --no-python
   successfully initdb /usr/local/var/postgres -E utf8
+
+echo "Installing PostGIS, a good open source geo-spatial database extension ..."
+  successfully brew install geos proj
+  successfully brew install gdal --without-python
+  successfully brew install postgis
 
 echo "Installing Redis, a good key-value database ..."
   successfully brew install redis
@@ -50,12 +72,6 @@ echo "Installing tmux, for saving project state and switching between projects .
 echo "Installing reattach-to-user-namespace, for copy-paste and RubyMotion compatibility with tmux ..."
   successfully brew install reattach-to-user-namespace
 
-echo "Installing ImageMagick, for cropping and re-sizing images ..."
-  successfully brew install imagemagick
-
-echo "Installing QT, used by Capybara Webkit for headless Javascript integration testing ..."
-  successfully brew install qt
-
 echo "Installing RVM (Ruby Version Manager) and Ruby 1.9.3-p327, which becomes the default ..."
   successfully curl -L https://get.rvm.io | bash -s stable --ruby
   successfully echo "
@@ -63,11 +79,8 @@ echo "Installing RVM (Ruby Version Manager) and Ruby 1.9.3-p327, which becomes t
 [[ -s '/Users/`whoami`/.rvm/scripts/rvm' ]] && source '/Users/`whoami`/.rvm/scripts/rvm'" >> ~/.zshenv
   successfully source ~/.rvm/scripts/rvm
 
-echo "Installing critical Ruby gems for Rails development ..."
-  successfully gem install bundler rails pg foreman thin --no-rdoc --no-ri
+echo "Installing critical Ruby gems for development ..."
+  successfully gem install bundler vagrant foreman --no-rdoc --no-ri
 
-echo "Installing standalone Heroku CLI client. You'll need administrative rights on your machine ..."
-  successfully curl -s https://toolbelt.heroku.com/install.sh | sh
-
-echo "Installing the heroku-config plugin for pulling config variables locally to be used as ENV variables ..."
-  successfully /usr/local/heroku/bin/heroku plugins:install git://github.com/ddollar/heroku-config.git
+echo "More brews"
+  successfully brew install macvim
