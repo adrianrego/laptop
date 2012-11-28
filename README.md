@@ -44,7 +44,6 @@ What it sets up
 * RVM for managing versions of the Ruby programming language
 * SSH public key for authenticating with Github and Heroku
 * Tmux for saving project state and switching between projects
-* Vagrant for managing virtual machines
 
 It should take less than 30 minutes to install (depends on your machine).
 

@@ -80,7 +80,7 @@ echo "Installing RVM (Ruby Version Manager) and Ruby 1.9.3-p327, which becomes t
   successfully source ~/.rvm/scripts/rvm
 
 echo "Installing critical Ruby gems for development ..."
-  successfully gem install bundler vagrant foreman --no-rdoc --no-ri
+  successfully gem install bundler foreman --no-rdoc --no-ri
 
 echo "More brews"
   successfully brew install macvim
